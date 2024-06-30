@@ -17,7 +17,7 @@ let questions = [
   "(5 + 3)/2 * 10 = ? ",
   "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ",
   "What is the minimum crew size for the ISS? ",
-  // lucas- these should be arrays to store user response? loop over quesstion to go voer all questions
+
 ]
 let correctAnswers = [
   "Sally Ride",
@@ -45,37 +45,19 @@ function askQuestion() {
 }
 
 
-//LUCAS IM ADDING STUFF HERE BEFORE THE FUNCTION 6/29 nothing above has been changed!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//let correctACased = correctAnswers.join("-").toLowerCase().split("-");             temp out
-//let candidateACased = candidateAnswers.join("-").toLowerCase().split("-");        temp out these moved
-//let candidateCorrectAs = []                -temp out moving these
-//let candidateIncorrectAs = []            -temp out
-
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
 console.log(`Your answers were: ${candidateAnswers} \n The correct answers were: ${correctAnswers}`)
 
-
-/*  if ((candidateAnswers) === (correctAnswers)) {
-  console.log("this is correct");
-} else {
-  console.log("this is incorrect");
-}
-*/
-
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
 
-// LUCAS- i added everything below here until the return statement
 correctAnswers = correctAnswers.join("-").toLowerCase().split("-");               
 candidateAnswers = candidateAnswers.join("-").toLowerCase().split("-");    
-//console.log(correctACased);
-//console.log(candidateACased);
 let candidateCorrectAs = []                 
 let candidateIncorrectAs = []              
 
-for (let i = 0; i <= correctAnswers.length; i++) {
+for (let i = 0; i < correctAnswers.length; i++) {
   if ((correctAnswers[i]) === (candidateAnswers[i])) {
     candidateCorrectAs.push(candidateAnswers[i]);
   } else {
@@ -84,7 +66,6 @@ for (let i = 0; i <= correctAnswers.length; i++) {
 }
 
 grade = (candidateCorrectAs.length) / (correctAnswers.length) * 100; 
-//LUCAS!!!!!!! IF I PUT THE GRADE ASSIGNMENT HERE insteaf of let grade (leave as let grade;) IT IS 20% ALWAYS??????????
 
 if (grade >= 80) {
   console.log(`You have passed with a score of ${grade}%!`);
@@ -92,7 +73,6 @@ if (grade >= 80) {
   console.log(`Your score is ${grade}%. Sorry, you have failed the test.`);
 }
 
-//Lucas - I HAVENT ADDED ANYTHING UNDER HERE AFTER MOVING CODE UP ABOVE RETURN
   return grade;
 }
 
