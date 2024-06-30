@@ -44,6 +44,14 @@ function askQuestion() {
   return candidateAnswer;
 }
 
+
+//LUCAS IM ADDING STUFF HERE BEFORE THE FUNCTION 6/29 nothing above has been changed!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//let correctACased = correctAnswers.join("-").toLowerCase().split("-");             temp out
+//let candidateACased = candidateAnswers.join("-").toLowerCase().split("-");        temp out these moved
+//let candidateCorrectAs = []                -temp out moving these
+//let candidateIncorrectAs = []            -temp out
+
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
@@ -59,9 +67,35 @@ console.log(`Your answers were: ${candidateAnswers} \n The correct answers were:
 
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
 
+// LUCAS- i added everything below here until the return statement
+correctAnswers = correctAnswers.join("-").toLowerCase().split("-");               
+candidateAnswers = candidateAnswers.join("-").toLowerCase().split("-");    
+//console.log(correctACased);
+//console.log(candidateACased);
+let candidateCorrectAs = []                 
+let candidateIncorrectAs = []              
 
+for (let i = 0; i <= correctAnswers.length; i++) {
+  if ((correctAnswers[i]) === (candidateAnswers[i])) {
+    candidateCorrectAs.push(candidateAnswers[i]);
+  } else {
+    candidateIncorrectAs.push(candidateAnswers[i]);
+  }
+}
+
+grade = (candidateCorrectAs.length) / (correctAnswers.length) * 100; 
+//LUCAS!!!!!!! IF I PUT THE GRADE ASSIGNMENT HERE insteaf of let grade (leave as let grade;) IT IS 20% ALWAYS??????????
+
+if (grade >= 80) {
+  console.log(`You have passed with a score of ${grade}%!`);
+} else {
+  console.log(`Your score is ${grade}%. Sorry, you have failed the test.`);
+}
+
+//Lucas - I HAVENT ADDED ANYTHING UNDER HERE AFTER MOVING CODE UP ABOVE RETURN
   return grade;
 }
+
 
 function runProgram() {
   askForName();
